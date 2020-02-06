@@ -3,39 +3,34 @@ import unittest
 from Calculator.Calculator import Calculator;
 
 class MyTestCase(unittest.TestCase):
-    # setUp is run before anything else so this is where you put things you want repeated or done in multiple methods
-    # setUp --> test
-    def setUp(self):
-        self.calculator = Calculator()
 
+    def test_instantiate_calculator(self):
+        calculator = Calculator()
+        self.assertIsInstance(calculator, Calculator)
 
-    def test_calculator_return_sum(self):
-        result = self.calculator.Sum(1,2)
+    def test_calculator_addition(self):
+        calculator = Calculator()
+        result = calculator.addition(1,2)
         self.assertEqual(3, result)
 
-    def test_calculator_return_difference(self):
-        result = self.calculator.Difference(2,4)
-        self.assertEqual(float(-2), float(result))
+    def test_calculator_subtraction(self):
+        calculator = Calculator()
+        result = calculator.subtraction(2,4)
+        self.assertEqual(float(2), float(result))
 
+    def test_calculator_multiplication(self):
+        calculator = Calculator()
+        result = calculator.multiply(4,5)
+        self.assertEqual(float(20), float(result))
 
-    # data is stored in the calculator object in "Result"
-    def test_calculator_access_difference_result(self):
-        self.calculator.Difference(2, 4)
-        self.assertEqual(float(-2), self.calculator.Result)
+    def test_calculator_square_root(self):
+        calculator = Calculator()
+        result = calculator.square_root(9)
+        self.assertEqual(float(3), float(result))
 
-    def test_calculator_access_sum_result(self):
-        self.calculator.Sum(2, 4)
-        self.assertEqual(6, self.calculator.Result)
-
-
-
-    def test_multiple_calculators(self):
-        calculator1 = Calculator()
-        calculator2 = Calculator()
-
-        self.calculator.Sum(calculator1.Sum(1,2),calculator2.Difference(3,4))
-        self.assertEqual(2,self.calculator.Result)
-
-
+    def test_calculator_square(self):
+        calculator = Calculator()
+        result = calculator.square(9)
+        self.assertEqual(float(81), float(result))
 if __name__ == '__main__':
     unittest.main()

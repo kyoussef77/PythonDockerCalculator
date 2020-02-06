@@ -1,5 +1,4 @@
-from MathOperations.addition import Addition;
-from MathOperations.subtraction import Subtraction;
+
 
 class Calculator:
     result = 0
@@ -7,13 +6,25 @@ class Calculator:
     def __init__(self):
         pass
 
-    def Sum(self, a, b):
-        self.Result = Addition.sum(a,b)
-        return self.Result
+    def addition(self, a, b):
+        return float(a) + float(b)
 
-    def Difference(self, a, b):
-        self.Result = Subtraction.difference(a,b)
-        return self.Result
+    def division(self, a, b):
+        return float(b) / float(a)
 
+    def subtraction(self, a, b):
+        a = float(a)
+        b = float(b)
+        c = b - a
+        return c
+
+    def multiply(self, a, b):
+        return float(a) * float(b)
+
+    def square_root(self, a):
+        return float(a) ** 0.5
+
+    def square(self, a):
+        return float(a) * float(a)
 
 
