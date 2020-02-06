@@ -17,6 +17,14 @@ class MyTestCase(unittest.TestCase):
         result = self.calculator.Difference(2,4)
         self.assertEqual(float(-2), float(result))
 
+    def test_calculator_return_Product(self):
+        result = self.calculator.Product(2, 4)
+        self.assertEqual(8, float(result))
+
+    def test_calculator_return_Quotient(self):
+        result = self.calculator.Quotient(2, 4)
+        self.assertEqual(0.5, result)
+
 
     # data is stored in the calculator object in "Result"
     def test_calculator_access_difference_result(self):
@@ -27,11 +35,22 @@ class MyTestCase(unittest.TestCase):
         self.calculator.Sum(2, 4)
         self.assertEqual(6, self.calculator.Result)
 
+    def test_calculator_access_product_result(self):
+        self.calculator.Product(2, 4)
+        self.assertEqual(8, self.calculator.Result)
+
+    def test_calculator_access_quotient_result(self):
+        self.calculator.Quotient(5,2.5)
+        self.assertEqual(2, self.calculator.Result)
+
+
+
 
 
     def test_multiple_calculators(self):
         calculator1 = Calculator()
         calculator2 = Calculator()
+        calculator3 = Calculator()
 
         self.calculator.Sum(calculator1.Sum(1,2),calculator2.Difference(3,4))
         self.assertEqual(2,self.calculator.Result)
