@@ -25,6 +25,10 @@ class MyTestCase(unittest.TestCase):
         result = self.calculator.Quotient(2, 4)
         self.assertEqual(0.5, result)
 
+    def test_calculator_return_Power(self):
+        result = self.calculator.Power(4,5)
+        self.assertEqual(1024, result)
+
 
     # data is stored in the calculator object in "Result"
     def test_calculator_access_difference_result(self):
@@ -43,6 +47,9 @@ class MyTestCase(unittest.TestCase):
         self.calculator.Quotient(5,2.5)
         self.assertEqual(2, self.calculator.Result)
 
+    def test_calculator_access_power_result(self):
+        self.calculator.Power(0,1)
+        self.assertEqual(0, self.calculator.Result)
 
 
 

@@ -3,6 +3,7 @@ import unittest
 from MathOperations.addition import Addition;
 from MathOperations.subtraction import Subtraction;
 from MathOperations.multiplication import Multiplication;
+from MathOperations.exponentiation import Exponentiation;
 
 class MyTestCase(unittest.TestCase):
 
@@ -23,7 +24,12 @@ class MyTestCase(unittest.TestCase):
         numlist = [2, 3, 4]
         self.assertEqual(24, Multiplication.product(numlist))
 
+    def test_MathOperations_Power(self):
+        self.assertEqual(8, Exponentiation.power(2,3))
 
+    def test_MathOperations_Power_list(self):
+        numlist = [1,2,3]
+        self.assertEqual(9, Exponentiation.power(numlist,2))
 
 if __name__ == '__main__':
     unittest.main()

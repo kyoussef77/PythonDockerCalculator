@@ -2,6 +2,8 @@ from MathOperations.addition import Addition;
 from MathOperations.subtraction import Subtraction;
 from MathOperations.multiplication import Multiplication;
 from MathOperations.division import Division;
+from MathOperations.exponentiation import Exponentiation;
+from MathOperations.nthRoot import NthRoot;
 
 class Calculator:
     result = 0
@@ -25,4 +27,10 @@ class Calculator:
         self.Result = Division.quotient(a,b)
         return self.Result
 
+    def Power(self,a,b):
+        self.Result = Exponentiation.power(a,b)
+        return self.Result
+
+    def Root(self,a,b):
+        self.Result = NthRoot.root(a,b)
 
