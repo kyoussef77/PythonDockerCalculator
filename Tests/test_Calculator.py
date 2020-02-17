@@ -1,20 +1,23 @@
 import unittest
+from numpy.random import seed
+from numpy.random import randint
+from Calculator.Calculator import Calculator
+from Statistics.statistics import Statistics
 
-from Calculator.Calculator import Calculator;
 
 class MyTestCase(unittest.TestCase):
     # setUp is run before anything else so this is where you put things you want repeated or done in multiple methods
     # setUp --> test
     def setUp(self):
         self.calculator = Calculator()
-
+        self.statistics = Statistics()
 
     def test_calculator_return_sum(self):
-        result = self.calculator.Sum(1,2)
+        result = self.calculator.Sum(1, 2)
         self.assertEqual(3, result)
 
     def test_calculator_return_difference(self):
-        result = self.calculator.Difference(2,4)
+        result = self.calculator.Difference(2, 4)
         self.assertEqual(float(-2), float(result))
 
     def test_calculator_return_Product(self):
@@ -26,9 +29,8 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(0.5, result)
 
     def test_calculator_return_Power(self):
-        result = self.calculator.Power(4,5)
+        result = self.calculator.Power(4, 5)
         self.assertEqual(1024, result)
-
 
     # data is stored in the calculator object in "Result"
     def test_calculator_access_difference_result(self):
@@ -44,12 +46,14 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(8, self.calculator.Result)
 
     def test_calculator_access_quotient_result(self):
-        self.calculator.Quotient(5,2.5)
+        self.calculator.Quotient(5, 2.5)
         self.assertEqual(2, self.calculator.Result)
 
     def test_calculator_access_power_result(self):
-        self.calculator.Power(0,1)
+        self.calculator.Power(0, 1)
         self.assertEqual(0, self.calculator.Result)
+
+
 
 
 
@@ -59,8 +63,8 @@ class MyTestCase(unittest.TestCase):
         calculator2 = Calculator()
         calculator3 = Calculator()
 
-        self.calculator.Sum(calculator1.Sum(1,2),calculator2.Difference(3,4))
-        self.assertEqual(2,self.calculator.Result)
+        self.calculator.Sum(calculator1.Sum(1, 2), calculator2.Difference(3, 4))
+        self.assertEqual(2, self.calculator.Result)
 
 
 if __name__ == '__main__':
