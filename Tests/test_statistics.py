@@ -17,6 +17,18 @@ class MyTestCase(unittest.TestCase):
         result = self.statistics.mean(data)
         self.assertEqual(3, result)
 
+    def test_random_int_seed(self):
+        testdata = self.statistics.Random_int_nums(1, 100, 5, 5)
+        mean = self.statistics.mean(testdata)
+        self.assertEqual(mean, 48.2)
+
+    def test_random_int(self):
+        testdata = self.statistics.Random_int_nums(1, 100, 5)
+        mean = self.statistics.mean(testdata)
+        self.assertEqual(mean, 48.2)
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

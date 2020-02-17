@@ -1,9 +1,15 @@
 from Calculator.Calculator import Calculator
-from Statistics.mean import mean
+from Statistics.mean import Mean
 
+from MathOperations.random import Random_num;
 
 class Statistics(Calculator):
 
     def mean(self, data):
-        self.result = mean(data)
-        return self.result
+        self.Result = Mean(data)
+        return self.Result
+
+
+    def Random_int_nums(self, a, b, c, d):
+        self.Result = Random_num.random_int_generator(a,b,c,d)
+        return self.Result
