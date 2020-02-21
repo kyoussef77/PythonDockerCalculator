@@ -24,18 +24,24 @@ class MyTestCase(unittest.TestCase):
 
     def test_random_int(self):
         testdata = self.statistics.Random_int_nums(1, 100, 5, None)
+        testdata2 = self.statistics.Random_int_nums(1, 100, 5, None)
         mean = self.statistics.mean(testdata)
-        self.assertEqual(mean, 48.2)
+        mean2 = self.statistics.mean(testdata2)
+        self.assertNotEqual(mean, mean2)
 
     def test_random_float_seed(self):
-        testdata = self.statistics.Random_float_nums(1, 100, 5, 3)
+        testdata = self.statistics.Random_float_nums(1.0, 100.0, 5, 3)
+        testdata2 = self.statistics.Random_float_nums(1.0, 100.0, 5, 3)
         mean = self.statistics.mean(testdata)
-        self.assertEqual(mean, 36.132556091996484)
+        mean2 = self.statistics.mean(testdata2)
+        self.assertAlmostEqual(mean, mean2)
 
     def test_random_float(self):
-        testdata = self.statistics.Random_float_nums(1, 100, 5, None)
+        testdata = self.statistics.Random_float_nums(1.0, 100.0, 5, None)
+        testdata2 = self.statistics.Random_float_nums(1.0, 100.0, 5, None)
         mean = self.statistics.mean(testdata)
-        self.assertEqual(mean, 48.2)
+        mean2 = self.statistics.mean(testdata2)
+        self.assertNotEqual(mean, mean2)
 
 
 
