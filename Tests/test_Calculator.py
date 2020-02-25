@@ -2,7 +2,7 @@ import unittest
 from numpy.random import seed
 from numpy.random import randint
 from Calculator.Calculator import Calculator
-from Statistics.statistics import Statistics
+from Statistics.Statistics import Statistics
 
 
 class MyTestCase(unittest.TestCase):

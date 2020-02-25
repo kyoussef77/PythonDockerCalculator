@@ -5,7 +5,6 @@ from MathOperations.division import Division;
 from MathOperations.exponentiation import Exponentiation;
 from MathOperations.nthRoot import NthRoot;
 
-from MathOperations.random import Random_num;
 
 class Calculator:
     Result = 0
