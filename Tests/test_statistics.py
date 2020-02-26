@@ -20,6 +20,18 @@ class MyTestCase(unittest.TestCase):
 
  # Test Mean -------------------------------------------------------------
 
+ # Test Mode -------------------------------------------------------------
+    def test_statistics_calculator_return_mode(self):
+        data = [1, 2, 3,3, 4, 5]
+        result = self.statistics.mode(data)
+        self.assertEqual(3, result)
 
+    def test_statistics_calculator_return_NoMode(self):
+        data = [1, 2, 3, 4, 5]
+        result = self.statistics.mode(data)
+        self.assertEqual('no mode', result)
+
+
+ # Test Mode -------------------------------------------------------------
 if __name__ == '__main__':
     unittest.main()
