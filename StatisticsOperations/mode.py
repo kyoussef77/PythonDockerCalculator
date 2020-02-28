@@ -1,4 +1,6 @@
 import collections
+
+
 class Mode:
     @staticmethod
     def mode(data):
@@ -10,7 +12,4 @@ class Mode:
         if len(mode_val) == len(data):
             return "no mode"
         else:
-            return  int(''.join(map(str, mode_val)))
-
-
-
+            return int(''.join(map(str, mode_val)))

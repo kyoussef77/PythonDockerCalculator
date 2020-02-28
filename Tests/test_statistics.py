@@ -43,7 +43,13 @@ class MyTestCase(unittest.TestCase):
         data = [1, 2, 3, 4, 5]
         result = self.statistics.median(data)
         self.assertEqual(3, result)
+    # Test Median -------------------------------------------------------------
 
+    # Test Variance -------------------------------------------------------------
+    def test_statistics_calculator_return_variance(self):
+        data = [1, 2, 3, 4, 5, 6]
+        result = self.statistics.variance(data)
+        self.assertEqual(3.5, result)
 
 
 if __name__ == '__main__':

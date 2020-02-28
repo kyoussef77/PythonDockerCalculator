@@ -2,6 +2,7 @@ import unittest
 from Random.Random import Random
 from Statistics.Statistics import Statistics
 
+
 class MyTestCase(unittest.TestCase):
 
     def setUp(self):
@@ -14,8 +15,7 @@ class MyTestCase(unittest.TestCase):
     def test_decorator_calculator(self):
         self.assertIsInstance(self.random, Random)
 
-   
-#Test Random -------------------------------------------------------------
+    # Test Random -------------------------------------------------------------
     def test_random_int_seed(self):
         testdata = self.random.Random_int_nums(1, 100, 5, 5)
         mean = self.statistics.mean(testdata)
@@ -41,7 +41,7 @@ class MyTestCase(unittest.TestCase):
         mean = self.statistics.mean(testdata)
         mean2 = self.statistics.mean(testdata2)
         self.assertNotEqual(mean, mean2)
-#Test Random -------------------------------------------------------------
+# Test Random -------------------------------------------------------------
 
 
 if __name__ == '__main__':

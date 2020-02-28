@@ -2,7 +2,7 @@ from Calculator.Calculator import Calculator
 from StatisticsOperations.mean import Mean
 from StatisticsOperations.mode import Mode
 from StatisticsOperations.median import Median
-from Random.random_Op import Random_num;
+from StatisticsOperations.variance import Variance
 
 
 class Statistics(Calculator):
@@ -17,4 +17,8 @@ class Statistics(Calculator):
 
     def median(self, data):
         self.Result = Median.median(data)
+        return self.Result
+
+    def variance(self, data):
+        self.Result = Variance.variance(data)
         return self.Result
