@@ -1,7 +1,7 @@
-import numpy as np
+from numpy import var
 
 class Variance:
     @staticmethod
     def variance(data):
-        variance = np.variance(data)
-        return variance
+        res = var(data)
+        return res
