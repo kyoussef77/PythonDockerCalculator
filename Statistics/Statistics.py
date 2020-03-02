@@ -5,7 +5,7 @@ from StatisticsOperations.median import Median
 from StatisticsOperations.variance import Variance
 from StatisticsOperations.stand_dev import Stand_dev
 from StatisticsOperations.quartiles import Quantile
-
+from StatisticsOperations.skew import Skew
 
 class Statistics(Calculator):
 
@@ -31,5 +31,9 @@ class Statistics(Calculator):
 
     def quartile(self,data,q,axis,kdims):
         self.Result = Quantile.quartile(data,q,axis,kdims)
+        return self.Result
+
+    def skew(self,data, axis, bias):
+        self.Result = Skew.skew(data,axis,bias)
         return self.Result
 

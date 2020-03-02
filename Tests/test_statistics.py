@@ -61,7 +61,15 @@ class MyTestCase(unittest.TestCase):
     def test_statistics_calculator_return_quartiles(self):
         data = [3,5,6]
         result = self.statistics.quartile(data,0.25,0,None)
-        self.assertEqual(1, result)
+        self.assertEqual(4, result)
+
+    # Test Skew -----------------------------------------------
+    def test_statistics_calculator_return_skew(self):
+        data = [3, 5, 6, 5, 3, 2, 1, 40]
+        result = self.statistics.skew(data,None,None)
+        self.assertEqual(2.1923866091383113, result)
+
+
 
 if __name__ == '__main__':
     unittest.main()
