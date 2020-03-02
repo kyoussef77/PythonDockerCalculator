@@ -23,9 +23,11 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(mean, 48.2)
 
     def test_random_int(self):
-        testdata = self.statistics.Random_int_nums(1, 100, 5)
+        testdata = self.statistics.Random_int_nums(1, 100, 5,None)
+        testdata2 = self.statistics.Random_int_nums(1, 100, 5, None)
         mean = self.statistics.mean(testdata)
-        self.assertEqual(mean, 48.2)
+        mean2 = self.statistics.mean(testdata2)
+        self.assertNotEqual(mean, mean2)
 
 
 
