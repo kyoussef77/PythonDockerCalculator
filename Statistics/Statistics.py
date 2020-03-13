@@ -1,11 +1,6 @@
 from Calculator.Calculator import Calculator
-from StatisticsOperations.mean import Mean
-from StatisticsOperations.mode import Mode
-from StatisticsOperations.median import Median
-from StatisticsOperations.variance import Variance
-from StatisticsOperations.stand_dev import Stand_dev
-from StatisticsOperations.quartiles import Quantile
-from StatisticsOperations.skew import Skew
+from StatisticsOperations.StatisticsOperations import *
+
 
 class Statistics(Calculator):
 
@@ -29,11 +24,22 @@ class Statistics(Calculator):
         self.Result = Stand_dev.stdev(data)
         return self.Result
 
-    def quartile(self,data,q,axis,kdims):
-        self.Result = Quantile.quartile(data,q,axis,kdims)
+    def quartile(self, data, q, axis, kdims):
+        self.Result = Quantile.quartile(data, q, axis, kdims)
         return self.Result
 
-    def skew(self,data, axis, bias):
-        self.Result = Skew.skew(data,axis,bias)
+    def skew(self, data, axis, bias):
+        self.Result = Skew.skew(data, axis, bias)
         return self.Result
 
+    def SampleCor(self, data1, data2):
+        self.Result = Correlation.SampleCor(data1, data2)
+        return self.Result
+
+    def PopulationCor(self, data1, data2):
+        self.Result = Correlation.PopulationCor(data1, data2)
+        return self.Result
+
+    def zscore(self, data):
+        self.Result = Zscore.zscore(data)
+        return self.Result

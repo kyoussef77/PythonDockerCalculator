@@ -1,5 +1,4 @@
-from MathOperations.addition import Addition
-from MathOperations.division import Division
+from Calculator.Calculator import *
 
 class Median:
     @staticmethod

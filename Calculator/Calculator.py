@@ -1,9 +1,4 @@
-from MathOperations.addition import Addition;
-from MathOperations.subtraction import Subtraction;
-from MathOperations.multiplication import Multiplication;
-from MathOperations.division import Division;
-from MathOperations.exponentiation import Exponentiation;
-from MathOperations.nthRoot import NthRoot;
+from MathOperations.MathOperations import *
 
 
 class Calculator:
@@ -35,6 +30,3 @@ class Calculator:
     def Root(self, a, b):
         self.Result = NthRoot.root(a, b)
         return self.Result
-
-
-

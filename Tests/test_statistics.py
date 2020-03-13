@@ -67,9 +67,13 @@ class MyTestCase(unittest.TestCase):
     def test_statistics_calculator_return_skew(self):
         data = [3, 5, 6, 5, 3, 2, 1, 40]
         result = self.statistics.skew(data,None,None)
-        self.assertEqual(2.1923866091383113, result)
+        self.assertEqual(2.734386516915545, result)
 
 
+    def test_statistics_calculator_return_zscore(self):
+        data = [3, 5, 6, 5, 3, 2, 1, 40]
+        result = self.statistics.zscore(data)
+        self.assertEqual(2.734386516915545, -0.3945853215085896)
 
 if __name__ == '__main__':
     unittest.main()
