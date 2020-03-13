@@ -73,7 +73,7 @@ class MyTestCase(unittest.TestCase):
     def test_statistics_calculator_return_zscore(self):
         data = [3, 5, 6, 5, 3, 2, 1, 40]
         result = self.statistics.zscore(data)
-        self.assertEqual(2.734386516915545, -0.3945853215085896)
+        self.assertEqual(-0.3945853215085896, result)
 
 if __name__ == '__main__':
     unittest.main()
